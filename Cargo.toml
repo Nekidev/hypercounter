@@ -1,7 +1,9 @@
 [package]
 name = "hypercounter"
+description = "An atomic, lock-free, hashmap-like counter structure."
 version = "0.1.0"
 edition = "2024"
 license = "MIT"
 authors = ["Nyeki"]
 readme = "README.md"
+repository = "https://github.com/Nekidev/hypercounter"
