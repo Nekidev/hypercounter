@@ -1,6 +1,7 @@
 [package]
-name = "hypercount"
+name = "hypercounter"
 version = "0.1.0"
 edition = "2024"
-
-[dependencies]
+license = "MIT"
+authors = ["Nyeki"]
+readme = "README.md"
