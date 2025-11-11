@@ -1,4 +1,4 @@
-//! An atomic, lock-free, hashmap-like counter structure.
+//! An atomic, lock-free, hash map-like counter structure.
 //!
 //! It uses Robin Hood hashing for collision resolution and supports concurrent access and
 //! modification of counters associated with keys. None of the operations require locks, making it

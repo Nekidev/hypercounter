@@ -1,6 +1,6 @@
 # HyperCounter
 
-An atomic, lock-free, hashmap-like counter structure.
+An atomic, lock-free, hash map-like counter structure.
 
 ## Example
 
