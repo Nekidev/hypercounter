@@ -909,6 +909,10 @@ where
             if let Some(entry) = entry {
                 let result = entry.1.fetch_max(value, ordering);
 
+                if value >= result && value == V::ZERO {
+                    self.remove(&entry.0, self.get_store_ordering(ordering));
+                }
+
                 return result;
             } else {
                 if value <= V::ZERO {
@@ -951,6 +955,10 @@ where
 
             if let Some(entry) = entry {
                 let result = entry.1.fetch_min(value, ordering);
+
+                if value <= result && value == V::ZERO {
+                    self.remove(&entry.0, self.get_store_ordering(ordering));
+                }
 
                 return result;
             } else {
