@@ -689,7 +689,6 @@ where
                     return existing.1.fetch_add(value, ordering);
                 } else if let Err(RobinHoodError::Full) = result {
                     // The bucket is full, try again (after expansion).
-                    println!("Insert failed due to full bucket, retrying...");
                     continue;
                 }
 
