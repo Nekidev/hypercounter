@@ -15,7 +15,8 @@
 //!
 //! - This is an experimental library and may not be suitable for production use yet. The API may
 //!   change.
-//! - It does not support shrinking of the underlying storage yet.
+//! - It does not support shrinking of the underlying storage yet. However, since the structure
+//!   uses a bucket of pointers, unused preallocated pointers only consume the null pointer size.
 //! - ABA protection for pointer operations is not implemented yet.
 //! - Performance optimizations are still ongoing.
 //! - Operations on atomics are always wrapping on overflow.
