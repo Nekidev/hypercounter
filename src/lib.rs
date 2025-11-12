@@ -676,7 +676,7 @@ where
                 // TODO: If the value after fetch_add() is zero, remove the entry.
                 let result = entry.1.fetch_add(value, ordering);
 
-                if result + value == V::ZERO {
+                if V::primitive_wrapping_add(result, value) == V::ZERO {
                     self.remove(&entry.0, self.get_store_ordering(ordering));
                 }
 
