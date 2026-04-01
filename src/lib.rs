@@ -81,6 +81,7 @@ use crate::numbers::AtomicNumber;
 
 mod numbers;
 
+#[derive(Clone)]
 pub struct HyperCounter<K, V, H = RandomState>
 where
     K: Eq + Hash,
