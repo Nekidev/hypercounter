@@ -81,7 +81,6 @@ use crate::numbers::AtomicNumber;
 
 mod numbers;
 
-#[derive(Clone)]
 pub struct HyperCounter<K, V, H = RandomState>
 where
     K: Eq + Hash,
@@ -483,7 +482,7 @@ where
     H: BuildHasher + Default,
 {
     /// Retains only the entries specified by the predicate function.
-    /// 
+    ///
     /// Arguments:
     /// * `f` - The predicate function to determine which entries to retain.
     /// * `ordering_load` - The memory ordering to use when loading values.
@@ -517,6 +516,19 @@ where
 {
     fn default() -> Self {
         Self::new()
+    }
+}
+
+impl<K, V, H> Clone for HyperCounter<K, V, H>
+where
+    K: Eq + Hash + Clone,
+    V: AtomicNumber,
+    H: BuildHasher + Default + Clone,
+{
+    fn clone(&self) -> Self {
+        HyperCounter {
+            inner: self.inner.clone(),
+        }
     }
 }
 
